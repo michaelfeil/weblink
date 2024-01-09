@@ -8,7 +8,7 @@ class Weblink
   def initialize(opts)
     @opts = opts
     @https = Tempfile.new('weblink')
-    @socks5 = Tempfile.new('weblink')
+    @socks5 = Tempfile.new('weblink2')
     @websockets = EventMachine::Queue.new
   end
 
