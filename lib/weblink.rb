@@ -31,6 +31,10 @@ class Weblink
 
     if @opts[:server]
       begin
+        # log paths to https and socks5 proxies to console
+        puts "[+] https proxy launching on #{@https.path}"
+        puts "[+] socks5 proxy launching on #{@socks5.path}"
+
         spawn('proxxy', "https://#{@https.path}", "socks5://#{@socks5.path}")
       rescue Errno::ENOENT
         abort('[-] Install proxxy v2 to run weblink server.')
